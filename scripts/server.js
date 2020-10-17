@@ -10,26 +10,13 @@ app.use(compression());
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3001;
-// const DIST_DIR = './dist'; //FOR PRODUCTION
-const DIST_DIR = './src/client';
+const DIST_DIR = './dist'; //FOR PRODUCTION
+// const DIST_DIR = './src/client';
 
 app.use(express.static(DIST_DIR));
 
 app.use('*', (req, res) => {
-    console.log('@@@ prova ');
-    console.log('@@@ prova 2 ', window.__SMDATA);
     res.sendFile(path.resolve(DIST_DIR, 'index.html'));
-});
-
-app.get('/', (req, res) => {
-    console.log('@@@ prova ');
-    res.sendFile(path.resolve(DIST_DIR, 'index.html'));
-});
-
-app.get('/path1', (req, res) => {
-    console.log('@@@ prova ');
-    res.sendFile(path.resolve(DIST_DIR, 'index.html'));
-    console.log();
 });
 
 app.listen(PORT, () =>
