@@ -1,11 +1,13 @@
-# test-lwc-oss
+# lwc-oss-router
 
-IN DEVELOPMENT
+**IN DEVELOPMENT**
+
 simple router for oss lwc
 
 ## How to start?
 
 To get started run `npm install lwc-oss-router`.
+
 After that add `{"npm": "lwc-oss-router"}` as new object in modules array in lwc.config.json
 
 <!-- Start simple by running `yarn watch` (or `npm run watch`, if you set up the project with `npm`). This will start the project with a local development server.
