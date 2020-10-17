@@ -1,0 +1,8 @@
+{
+    "modules": [
+        {
+            "dir": "src/client/modules"
+        }
+    ],
+    "expose": ["my/app", "my/greeting", "my/route", "my/router", "my/link"]
+}
