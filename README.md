@@ -12,7 +12,7 @@ After that add `{"npm": "lwc-oss-router"}` as new object in modules array in lwc
 
 **NB:** This does not work in local development server, you need to build up the lwc app and then use the command `npm run serve`
 
-### How to use it
+## How to use it
 
 TBD
 
