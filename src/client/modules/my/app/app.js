@@ -24,7 +24,7 @@ export default class App extends LightningElement {
             new CustomEvent('clicklink', {
                 bubbles: true,
                 composed: true,
-                detail: { to: 'path1' }
+                detail: { to: '/path1' }
             })
         );
     }
