@@ -1,23 +1,15 @@
 import { LightningElement } from 'lwc';
-// import { createStore } from '@lwce/store';
 
 export default class Router extends LightningElement {
     constructor() {
         super();
         window.addEventListener('popstate', this.handleChangeState.bind(this));
         window.addEventListener('clicklink', this.handleChangeState.bind(this));
-        window.addEventListener('beforeunload', this.unloadHandler.bind(this));
-        window.addEventListener('onload', this.reloadPage.bind(this));
-        // window.addEventListener('unload', this.unloadHandler.bind(this));
-        // window.addEventListener('pagehide', this.reloadPage.bind(this));
-        window.addEventListener('pushstate', this.handlePushState.bind(this));
     }
 
     connectedCallback() {
         var currentPath = localStorage.getItem('currentPath');
-        console.log('@@@ currentPath ', currentPath);
         if (currentPath != null) window.history.pushState('', '', currentPath);
-        window.__SMDATA = 'test';
     }
 
     renderedCallback() {
@@ -36,26 +28,6 @@ export default class Router extends LightningElement {
             if (r.path === actualPath) r.isVisible = true;
             else r.isVisible = false;
         });
-    }
-
-    unloadHandler(evt) {
-        // evt.returnValue = undefined;
-        window.location.href = window.location.origin;
-        console.log('@@@ origin ', window.location.origin);
-        window.location.href = 'http://localhost:3001';
-        console.log('@@@ href final ', window.location.href);
-        evt.returnValue = 'abc';
-        // return evt.returnValue;
-        return '';
-        // return;
-    }
-
-    handlePushState(evt) {
-        console.log('@@@ pushstae ', evt);
-    }
-
-    reloadPage(evt) {
-        console.log('@@@ reload ', evt);
     }
 
     handleChangeState(evt) {

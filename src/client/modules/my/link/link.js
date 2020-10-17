@@ -15,15 +15,13 @@ export default class App extends LightningElement {
             new CustomEvent('clicklink', {
                 bubbles: true,
                 composed: true,
-                detail: { to: this.computedTo }
+                detail: { to: this.to }
             })
         );
     }
 
-    get computedTo() {
-        console.log('@@@ this.to.charAt(0) ', this.to.charAt(0));
-        if (this.to.charAt(0) !== '/') return '/' + this.to;
-
-        return this.to;
-    }
+    // get computedTo() {
+    //     if (this.to.charAt(0) !== '/') return '/' + this.to;
+    //     return this.to;
+    // }
 }

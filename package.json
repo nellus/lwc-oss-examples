@@ -1,9 +1,11 @@
 {
-    "name": "test-lwc-oss",
+    "name": "lwc-oss-router",
     "description": "My amazing LWC app",
     "version": "0.0.1",
     "author": "simone.martinello",
-    "bugs": "https://github.com/simone.martinello/test-lwc-oss/issues",
+    "bugs": {
+        "url": "https://github.com/simone.martinello/test-lwc-oss/issues"
+    },
     "dependencies": {
         "@lwce/store": "0.0.1",
         "compression": "^1.7.4",
@@ -53,7 +55,10 @@
         ],
         "exec": "node ./src/server/api.js"
     },
-    "repository": "simone.martinello/test-lwc-oss",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/simone.martinello/test-lwc-oss.git"
+    },
     "scripts": {
         "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
@@ -72,5 +77,6 @@
         "watch:client": "lwc-services watch",
         "watch:server": "nodemon",
         "start": "run-p serve:client serve:api"
-    }
+    },
+    "main": "lwc-services.config.js"
 }

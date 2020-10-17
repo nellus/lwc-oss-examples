@@ -1,7 +1,8 @@
 import { LightningElement, api } from 'lwc';
 
 export default class App extends LightningElement {
-    // @api matchLocation;
+    //Url Path
     @api path;
+    //Render the slot inside the route
     @api isVisible;
 }
