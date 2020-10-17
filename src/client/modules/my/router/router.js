@@ -17,6 +17,7 @@ export default class Router extends LightningElement {
         var currentPath = localStorage.getItem('currentPath');
         console.log('@@@ currentPath ', currentPath);
         if (currentPath != null) window.history.pushState('', '', currentPath);
+        window.__SMDATA = 'test';
     }
 
     renderedCallback() {
@@ -80,13 +81,29 @@ export default class Router extends LightningElement {
             } else console.log('no route found');
         } else {
             path = window.location.origin;
+            if (window.localStorage.getItem('prevPath') != null)
+                path = window.localStorage.getItem('prevPath');
             // window.location.pathname = window.location.origin
+            let routes = this.querySelectorAll('my-route');
+            console.log('@@@ routes ', routes);
+            if (routes != null) {
+                routes.forEach((r) => {
+                    if (
+                        window.localStorage.getItem('prevPath').includes(r.path)
+                    )
+                        r.isVisible = true;
+                    else r.isVisible = false;
+                });
+
+                console.log('@@@ routes final ', routes);
+            } else console.log('no route found');
         }
         console.log('@@@ pathname ', window.location.pathname);
         console.log('@@@ path ', path);
 
         window.localStorage.setItem('currentPath', path);
-
-        window.history.pushState('page2', 'Title', path);
+        window.localStorage.setItem('prevPath', window.location.href);
+        console.log('@@@ prevPath ', window.localStorage.getItem('prevPath'));
+        window.history.pushState('page', 'page', path);
     }
 }

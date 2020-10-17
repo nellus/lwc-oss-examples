@@ -15,10 +15,11 @@ const DIST_DIR = './src/client';
 
 app.use(express.static(DIST_DIR));
 
-// app.use('*',(req, res) => {
-//     console.log('@@@ prova ');
-//     res.sendFile(path.resolve(DIST_DIR, 'index.html'));
-// });
+app.use('*', (req, res) => {
+    console.log('@@@ prova ');
+    console.log('@@@ prova 2 ', window.__SMDATA);
+    res.sendFile(path.resolve(DIST_DIR, 'index.html'));
+});
 
 app.get('/', (req, res) => {
     console.log('@@@ prova ');
