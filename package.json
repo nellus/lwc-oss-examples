@@ -1,7 +1,7 @@
 {
     "name": "lwc-oss-router",
     "description": "My amazing LWC app",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "simone.martinello",
     "bugs": {
         "url": "https://github.com/simone.martinello/test-lwc-oss/issues"

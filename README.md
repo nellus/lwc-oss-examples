@@ -12,6 +12,36 @@ After that add `{"npm": "lwc-oss-router"}` as new object in modules array in lwc
 
 **NB:** This does not work in local development server, you need to build up the lwc app and then use the command `npm run serve`
 
+## components
+
+**my-router**
+
+the main container. Can contain all the route.
+
+`<my-router></my-router>`
+
+**props**
+
+N/D
+
+**my-route**
+
+define a slot for a specific route
+
+`<my-route></my-route>`
+
+**props**
+
+**`path`** the path that will match with the url and show whats inside the route
+
+**my-link**
+
+define a slot to insert a component that will cause a redirect
+
+**props**
+
+**`to`** the path that will redirect to
+
 ## How to use it
 
 TBD
